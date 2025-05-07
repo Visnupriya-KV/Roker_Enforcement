@@ -1,0 +1,65 @@
+{
+  "name": "playwright-automation-vsc-extension",
+  "displayName": "Playwright Automation Helper",
+  "version": "0.0.1",
+  "description": "A VS Code extension to help run Playwright automation scripts.",
+  "author": "",
+  "license": "ISC",
+  "keywords": [
+    "playwright",
+    "automation",
+    "testing",
+    "vscode",
+    "extension"
+  ],
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "activationEvents": [
+    "onCommand:extension.runSelectedApiTests",
+    "workspaceContains:Testcase.csv"
+  ],
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.runSelectedApiTests",
+        "title": "Run Selected API Tests (from CSV)",
+        "icon": "$(play)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "extension.runSelectedApiTests",
+          "when": "resourceFilename == 'Testcase.csv'",
+          "group": "navigation@1"
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "csv-parse": "^5.6.0",
+    "dotenv": "^16.5.0",
+    "luxon": "^3.6.1",
+    "nodemailer": "^6.10.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.7.0",
+    "@playwright/test": "^1.52.0",
+    "@types/luxon": "^3.4.2",
+    "@types/node": "^18.x",
+    "@types/vscode": "^1.80.0",
+    "@typescript-eslint/eslint-plugin": "^6.x",
+    "@typescript-eslint/parser": "^6.x",
+    "eslint": "^8.x",
+    "typescript": "^5.x",
+    "vscode-test": "^1.x"
+  }
+}

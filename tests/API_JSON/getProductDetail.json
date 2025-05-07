@@ -1,0 +1,16 @@
+{
+    "urls": {
+      "loginPage": "https://citycanada.app.develop.rokersmartpermits.com/homepage/default",
+      "tokenEndpoint": "/connect/token",
+      "productDetailAPI": "https://api.develop.rokersmartpermits.com/poweradmin/productdetail/getproductdetail"
+    },
+    "credentials": {
+      "email": "kavyaanand021123@gmail.com",
+      "password": "Roker@2024"
+    },
+    "headers": {
+      "accept": "application/json, text/plain, */*",
+      "language": "en"
+    }
+  }
+  

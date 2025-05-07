@@ -1,0 +1,36 @@
+{
+    "credentials": {
+        "email": "kavyaanand021123@gmail.com",
+        "password": "Roker@2024"
+    },
+    "requestBody": {
+        "skip": 0,
+        "take": 3,
+        "sort": [
+            {
+                "field": "appliedOn",
+                "dir": "desc"
+            }
+        ],
+        "advanceSearch": {
+            "permitApplicationNo": "",
+            "permitTypeId": null,
+            "orderNumber": "",
+            "permitApplicationStatusId": null,
+            "permitStatusId": null,
+            "firstName": "",
+            "lastName": "",
+            "licenseNumber": "",
+            "licenseCountryId": "",
+            "licenseProvinceName": "",
+            "address1": "",
+            "address2": "",
+            "city": "",
+            "zipCode": "",
+            "countryCode": "",
+            "provinceCode": "",
+            "location": "",
+            "showBulkPermits": true
+        }
+    }
+}

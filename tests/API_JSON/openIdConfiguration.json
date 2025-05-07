@@ -1,0 +1,12 @@
+{
+    "urls": {
+      "openidConfiguration": "https://citycanada.iam.develop.rokersmartpermits.com/.well-known/openid-configuration"
+    },
+    "expected": {
+      "issuerContains": "rokersmartpermits.com",
+      "responseTypesSupported": "code",
+      "grantTypesSupported": "authorization_code",
+      "scopesSupported": "openid"
+    }
+  }
+  

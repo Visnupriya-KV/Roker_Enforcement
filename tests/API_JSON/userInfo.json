@@ -1,0 +1,18 @@
+{
+    "loginUrl": "https://citycanada.app.develop.rokersmartpermits.com/homepage/default",
+    "login": {
+      "email": "kavyaanand021123@gmail.com",
+      "password": "Roker@2024"
+    },
+    "oauth": {
+      "tokenEndpoint": "/connect/token",
+      "userinfoEndpoint": "https://citycanada.iam.develop.rokersmartpermits.com/connect/userinfo"
+    },
+    "expectedUserInfo": {
+      "email": "kavyaanand021123@gmail.com",
+      "given_name": "kavya",
+      "family_name": "anand",
+      "tenant_hostname": "citycanada"
+    }
+  }
+  
