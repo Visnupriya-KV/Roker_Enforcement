@@ -3,7 +3,7 @@ import loginInfo from '../API_JSON/commonConfig/loginInfo.json';
 import headers from '../API_JSON/commonConfig/headers.json';
 import apiEndpoints from '../API_JSON/commonConfig/apiEndpoints.json';
 
-test('Login and capture cookies for violation Status API call', async ({ page }) => {
+test('API_ViolationStatus_Test: Login and capture cookies for violation Status API call', async ({ page }) => {
   let cookies = '';
 
   // Step 1: Navigate to the login page
