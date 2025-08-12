@@ -1,2 +1,3 @@
 S.No,Control,TestCaseID,Module,Author,Description
 1,Y,API_ViolationStatus_Test,API_Regression,Visnu,API_Check
+2,Y,API_LotGroupDetails_Test,API_Regression,Visnu,API_Check

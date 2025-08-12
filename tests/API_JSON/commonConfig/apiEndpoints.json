@@ -1,3 +1,4 @@
 {
-  "violationStatus": "https://devsecpksite.azurewebsites.net/api/violationstatus"
+  "violationStatus": "https://devsecpksite.azurewebsites.net/api/violationstatus",
+  "groupApi": "https://devsecpksite.azurewebsites.net/api/group"
 }
