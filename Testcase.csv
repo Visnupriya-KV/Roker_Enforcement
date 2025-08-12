@@ -1,9 +1,2 @@
 S.No,Control,TestCaseID,Module,Author,Description
-1,Y,API_AccountConfiguration_Test,API_Regression,Visnu,API_Check
-2,Y,API_ContactUs_Test,API_Regression,Visnu,API_Check
-3,Y,API_GetProductDetail_Test,API_Regression,Visnu,API_Check
-4,Y,API_OpenIDConfiguration_Test,API_Regression,Visnu,API_Check
-5,Y,API_Permits_Test,API_Regression,Visnu,API_Check
-6,Y,API_UserInfo_Test,API_Regression,Visnu,API_Check
-7,Y,API_BusinessProfile_Test,API_Regression,Visnu,API_Check
-8,Y,API_BusinessProfile_Test,API_Regression,Visnu,API_Check
+1,Y,API_ViolationStatus_Test,API_Regression,Visnu,API_Check
