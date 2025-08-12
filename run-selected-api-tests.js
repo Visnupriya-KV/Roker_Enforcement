@@ -4,87 +4,144 @@ const { execSync } = require('child_process');
 const nodemailer = require('nodemailer');
 require('dotenv').config(); // Load environment variables from .env file
 
-const csvFilePath = path.join(__dirname, 'Testcase.csv'); // Adjust path if needed
+const csvFilePath = path.join(__dirname, 'Testcase.csv'); // Path to Testcase.csv
 const reportDir = path.join(__dirname, 'playwright-report'); // Default Playwright report directory
-const reportFilePath = path.join(reportDir, 'index.html'); // Full path to the report file
+const reportFilePath = path.join(reportDir, '/html/index.html'); // Full path to the report file
 
 // --- Email Configuration ---
 const emailConfig = {
-    service: process.env.EMAIL_SERVICE, // e.g., 'gmail' (if using service)
-    host: process.env.EMAIL_HOST,       // e.g., 'smtp.office365.com' (if using host/port)
-    port: process.env.EMAIL_PORT ? parseInt(process.env.EMAIL_PORT, 10) : undefined, // e.g., 587 or 465
-    secure: process.env.EMAIL_SECURE ? (process.env.EMAIL_SECURE === 'true') : undefined, // true for 465, false for other ports (like 587)
+    service: process.env.EMAIL_SERVICE,
+    host: process.env.EMAIL_HOST,
+    port: process.env.EMAIL_PORT ? parseInt(process.env.EMAIL_PORT, 10) : undefined,
+    secure: process.env.EMAIL_SECURE ? (process.env.EMAIL_SECURE === 'true') : undefined,
     auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS, // Use App Password for Gmail if 2FA is enabled
+        pass: process.env.EMAIL_PASS,
     },
     from: process.env.EMAIL_FROM,
-    to: process.env.EMAIL_TO, // Comma-separated list of recipients
+    to: process.env.EMAIL_TO,
 };
 
 // --- Helper Function to Send Email ---
 async function sendReportEmail(status) {
+    console.log('📧 Preparing to send email...');
+
     if (!emailConfig.auth.user || !emailConfig.auth.pass || !emailConfig.to) {
         console.warn('⚠️ Email configuration incomplete. Skipping email notification.');
         return;
     }
 
-    // Check if report file exists before attempting to send
     if (!fs.existsSync(reportFilePath)) {
-        console.error(`❌ Report file not found at ${reportFilePath}. Cannot send email attachment.`);
-        // Optionally send an email without attachment indicating the report is missing
-        // Or just return here if attachment is mandatory
+        console.error(`❌ HTML report not found at ${reportFilePath}. Cannot send email attachment.`);
         return;
     }
 
-    console.log(`\n📧 Preparing to send ${status} report email...`);
+    // Extract test details from the JSON report
+    const reportSummary = extractReportSummary(reportDir);
+    const { totalTests, passedTests, failedTests, duration } = reportSummary;
 
-    // Create transporter object
-    let transporterOptions = {};
-    if (emailConfig.service) {
-        transporterOptions.service = emailConfig.service;
-        transporterOptions.auth = emailConfig.auth;
-    } else if (emailConfig.host && emailConfig.port) {
-        transporterOptions.host = emailConfig.host;
-        transporterOptions.port = emailConfig.port;
-        transporterOptions.secure = emailConfig.secure;
-        transporterOptions.auth = emailConfig.auth;
-    } else {
-        console.error('❌ Invalid email transport configuration (missing service or host/port).');
-        return;
-    }
+    const transporter = nodemailer.createTransport({
+        service: emailConfig.service,
+        host: emailConfig.host,
+        port: emailConfig.port,
+        secure: emailConfig.secure,
+        auth: emailConfig.auth,
+    });
 
-    const transporter = nodemailer.createTransport(transporterOptions);
+    const currentDateTime = new Date().toLocaleString(); // Get current date and time
 
-    // Email options
+    const currentDate = new Date();
+    const formattedDate = currentDate.toISOString().split('T')[0]; // Format: YYYY-MM-DD
+    const formattedTime = currentDate.toTimeString().split(' ')[0].replace(/:/g, ':'); // Format: HH-MM-SS
+    const dynamicFilename = `DEV_enforcement_${formattedDate}/${formattedTime}.html`;
+
     const mailOptions = {
         from: emailConfig.from,
         to: emailConfig.to,
-        subject: `ROKER TEST REPORT - ${status} - ${new Date().toLocaleString()}`,
-        text: `Playwright Roker test execution finished with status: ${status}.\nPlease find the attached HTML report.`, // Added path to text body
-        html: `<p>Playwright test execution finished with status: <b>${status}</b>.</p><p>Please find the attached HTML report.</p><p>DOWNLOAD AND VIEW THE HTML REPORT.</P>`, // Added path to HTML body
+        subject: `DEV ROKER Enforcement TEST REPORT - ${status.toUpperCase()} - (${currentDateTime})`,
+        text: `Hi Team,
+
+DEV ROKER Enforcement test execution has completed with the following details:
+
+Status: ${status.toUpperCase()}
+Total Tests: ${totalTests}
+Passed: ${passedTests}
+Failed: ${failedTests}
+Duration: ${duration}
+
+Please download and view the attached HTML report for full details.
+
+Regards,
+QA Automation`,
+        html: `<p>Hi Team,</p>
+<p>DEV ROKER Enforcement test execution has completed with the following details:</p>
+<ul>
+    <li><b>Status:</b> ${status.toUpperCase()}</li>
+    <li><b>Total Tests:</b> ${totalTests}</li>
+    <li><b>Passed:</b> ${passedTests}</li>
+    <li><b>Failed:</b> ${failedTests}</li>
+    <li><b>Duration:</b> ${duration}</li>
+</ul>
+<p>Please download and view the attached HTML report for full details.</p>
+<p>Regards,<br>QA Automation</p>`,
         attachments: [
             {
-                filename: 'ROKER_Regression_Test-report.html', // Name for the attachment
+                filename: dynamicFilename, // Use the dynamically generated filename
                 path: reportFilePath,
-                contentType: 'text/html'
+                contentType: 'text/html',
             },
         ],
     };
 
-    // Send mail
     try {
-        let info = await transporter.sendMail(mailOptions);
-        console.log('✅ Email sent successfully!');
-        console.log('Message ID:', info.messageId);
+        const info = await transporter.sendMail(mailOptions);
+        console.log('✅ Email sent successfully:', info.messageId);
     } catch (error) {
         console.error('❌ Error sending email:', error);
     }
 }
 
+// --- Extract Report Summary ---
+function extractReportSummary(reportDir) {
+    const jsonReportPath = path.join(reportDir, '/json/report.json'); // Correct path to the JSON report
+
+    // Default values in case parsing fails
+    let totalTests = 0;
+    let passedTests = 0;
+    let failedTests = 0;
+    let duration = 'N/A';
+
+    try {
+        if (!fs.existsSync(jsonReportPath)) {
+            console.error(`❌ JSON report not found at ${jsonReportPath}`);
+            return { totalTests, passedTests, failedTests, duration };
+        }
+
+        const reportContent = JSON.parse(fs.readFileSync(jsonReportPath, 'utf8'));
+        console.log('📄 JSON report loaded successfully.');
+
+        // Extract test results
+        totalTests = reportContent.stats.expected + reportContent.stats.unexpected;
+        passedTests = reportContent.stats.expected;
+        failedTests = reportContent.stats.unexpected;
+
+        // Extract duration
+        if (reportContent.stats.duration) {
+            const durationInSeconds = Math.round(reportContent.stats.duration / 1000);
+            const minutes = Math.floor(durationInSeconds / 60);
+            const seconds = durationInSeconds % 60;
+            duration = `${minutes}m ${seconds}s`;
+        }
+    } catch (error) {
+        console.error('❌ Error extracting report summary from JSON:', error);
+    }
+
+    return { totalTests, passedTests, failedTests, duration };
+}
 
 // --- Main Script Logic ---
-(async () => { // Wrap in an async IIFE to use await for email sending
+(async () => {
+    let executionStatus = 'SUCCESS';
     try {
         // Read the CSV file
         const csvData = fs.readFileSync(csvFilePath, 'utf8');
@@ -120,51 +177,31 @@ async function sendReportEmail(status) {
         console.log('▶️ Test Cases to run:', testCaseIDsToRun.join(', '));
 
         // Construct the Playwright command with --grep
-        const grepPattern = testCaseIDsToRun.join('|'); // Join IDs with OR operator for grep
-        // Ensure the reporter is explicitly set to html
-        const playwrightCommand = `npx playwright test --reporter=html --grep="${grepPattern}"`;
+        const grepPattern = testCaseIDsToRun.map(id => `${id}.*`).join('|'); // Match test titles with additional text
+        const playwrightCommand = `PW_TEST_HTML_REPORT_OPEN=never npx playwright test --grep="${grepPattern}"`;
 
         console.log(`\n🚀 Executing command: ${playwrightCommand}\n`);
 
         // Execute the command
-        let executionStatus = 'SUCCESS';
         try {
-            // Clear previous report if desired (optional)
-            // if (fs.existsSync(reportDir)) {
-            //     fs.rmSync(reportDir, { recursive: true, force: true });
-            //     console.log('🧹 Cleared previous report directory.');
-            // }
             execSync(playwrightCommand, { stdio: 'inherit' }); // Inherit stdio to see Playwright output
             console.log('\n✅ Playwright tests completed successfully.');
         } catch (error) {
             console.error('\n❌ Playwright tests failed.');
             executionStatus = 'FAILURE';
-            // Don't exit yet, proceed to report path logging and email sending
         }
 
         // --- Print the report path to the terminal ---
         if (fs.existsSync(reportFilePath)) {
             console.log(`\n📄 HTML Report generated at: ${reportFilePath}`);
-            // You can also provide a file URL for easier opening on some systems:
-            // console.log(`   File URL: file://${reportFilePath}`);
         } else {
-            // This might happen if Playwright failed very early or config is wrong
             console.warn(`\n⚠️ HTML Report file not found at: ${reportFilePath}. Cannot provide path or send attachment.`);
         }
-        // --- End of printing path ---
-
-        // Send email after execution attempt
-        await sendReportEmail(executionStatus); // Use await as sendReportEmail is async
-
-        // Exit with appropriate code if tests failed
-        if (executionStatus === 'FAILURE') {
-            process.exit(1); // Indicate failure
-        }
-
     } catch (error) {
         console.error('\n❌ An error occurred in the main script execution:', error);
-        // Optionally send a failure notification email here too if the script itself crashes
-        // await sendFailureNotificationEmail(error); // Implement if needed
-        process.exit(1); // Exit with a failure code
+        executionStatus = 'FAILURE';
+    } finally {
+        // Send email after execution attempt, regardless of success or failure
+        await sendReportEmail(executionStatus);
     }
-})(); // Immediately invoke the async function
+})();
