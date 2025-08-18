@@ -1,3 +1,10 @@
 S.No,Control,TestCaseID,Module,Author,Description
-1,Y,API_ViolationStatus_Test,API_Regression,Visnu,API_Check
-2,Y,API_LotGroupDetails_Test,API_Regression,Visnu,API_Check
+1,Y,API_ViolationStatus_Test,API_Regression,Visnu,API_Check,
+2,Y,API_LotGroupDetails_Test,API_Regression,Visnu,API_Check,
+3,Y,API_ViolationType_Test,API_Regression,Visnu,API_Check,
+4,Y,API_AcceptedDocument_Test,API_Regression,Visnu,API_Check,
+5,Y,API_ProvinceState_Test,API_Regression,Visnu,API_Check,
+6,Y,API_GetVendorMultiBusinessEnabled_Test,API_Regression,Visnu,API_Check,
+7,Y,API_GetVehicleColor_Test,API_Regression,Visnu,API_Check,
+8,Y,API_GetVendorBusiness_Test,API_Regression,Visnu,API_Check,
+9,Y,API_LotDetails_Test,API_Regression,Visnu,API_Check,
