@@ -9,3 +9,4 @@ S.No,Control,TestCaseID,Module,Author,Description
 8,Y,API_GetVendorBusiness_Test,API_Regression,Visnu,API_Check,
 9,Y,API_LotDetails_Test,API_Regression,Visnu,API_Check,
 10,Y,API_ViolationTypeForLot_Test,API_Regression,Visnu,API_Check,
+11,Y,API_GetLotsForUser_Test,API_Regression,Visnu,API_Check,
