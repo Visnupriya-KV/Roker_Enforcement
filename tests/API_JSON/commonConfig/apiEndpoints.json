@@ -8,5 +8,6 @@
   "getVehicleColor": "https://devsecpksite.azurewebsites.net/api/GetVehicleColor",
   "getVendorBusiness": "https://devsecpksite.azurewebsites.net/api/GetVendorBusiness",
   "lotDetails": "https://devsecpksite.azurewebsites.net/api/lot?groupIds=1710%2C1410%2C1714%2C1334%2C1129%2C1117%2C1114%2C1724%2C1413&includeArchived=true",
-  "violationTypeForLotApi": "https://devsecpksite.azurewebsites.net/api/violationTypeForLot"
+  "violationTypeForLotApi": "https://devsecpksite.azurewebsites.net/api/violationTypeForLot",
+  "getLotsForUser": "https://devsecpksite.azurewebsites.net/api/getLotsForUser"
 }
