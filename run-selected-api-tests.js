@@ -75,6 +75,7 @@ Regards,
 QA Automation`,
         html: `<p>Hi Team,</p>
 <p>UAT ROKER Enforcement test execution has completed with the following details:</p>
+
 <ul>
     <li><b>Status:</b> ${status.toUpperCase()}</li>
     <li><b>Total Tests:</b> ${totalTests}</li>
