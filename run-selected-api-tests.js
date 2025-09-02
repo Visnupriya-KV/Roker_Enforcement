@@ -53,15 +53,17 @@ async function sendReportEmail(status) {
     const currentDate = new Date();
     const formattedDate = currentDate.toISOString().split('T')[0]; // Format: YYYY-MM-DD
     const formattedTime = currentDate.toTimeString().split(' ')[0].replace(/:/g, ':'); // Format: HH-MM-SS
-    const dynamicFilename = `UAT_enforcement_${formattedDate}/${formattedTime}.html`;
+
+    const dynamicFilename = `QA_enforcement_${formattedDate}/${formattedTime}.html`;
 
     const mailOptions = {
         from: emailConfig.from,
         to: emailConfig.to,
-        subject: `UAT ROKER Enforcement TEST REPORT - ${status.toUpperCase()} - (${currentDateTime})`,
+
+        subject: `QA ROKER Enforcement TEST REPORT - ${status.toUpperCase()} - (${currentDateTime})`,
         text: `Hi Team,
 
-UAT ROKER Enforcement test execution has completed with the following details:
+QA ROKER Enforcement test execution has completed with the following details:
 
 Status: ${status.toUpperCase()}
 Total Tests: ${totalTests}
@@ -74,8 +76,8 @@ Please download and view the attached HTML report for full details.
 Regards,
 QA Automation`,
         html: `<p>Hi Team,</p>
-<p>UAT ROKER Enforcement test execution has completed with the following details:</p>
 
+<p>QA ROKER Enforcement test execution has completed with the following details:</p>
 <ul>
     <li><b>Status:</b> ${status.toUpperCase()}</li>
     <li><b>Total Tests:</b> ${totalTests}</li>
