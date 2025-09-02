@@ -10,3 +10,5 @@ S.No,Control,TestCaseID,Module,Author,Description
 9,Y,API_LotDetails_Test,API_Regression,Visnu,API_Check,
 10,Y,API_ViolationTypeForLot_Test,API_Regression,Visnu,API_Check,
 11,Y,API_GetLotsForUser_Test,API_Regression,Visnu,API_Check,
+12,Y,API_VehicleModelForVehicleMake_Tests,API_Regression,Visnu,API_Check,
+13,Y,API_IsDuplicate_Tests,API_Regression,Visnu,API_Check,
