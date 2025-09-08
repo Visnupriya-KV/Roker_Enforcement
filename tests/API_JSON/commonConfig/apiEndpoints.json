@@ -15,7 +15,9 @@
   "sourceTypesApi": "https://devsecpksite.azurewebsites.net/api/SourceTypes",
   "plateActivityListApi": "https://devsecpksite.azurewebsites.net/api/PlateActivityList",
   "plateActivityTypeMasterApi": "https://devsecpksite.azurewebsites.net/api/PlateActivityTypeMaster",
-  "paymentMethodApi": "https://devsecpksite.azurewebsites.net/api/paymentMethod"
+  "paymentMethodApi": "https://devsecpksite.azurewebsites.net/api/paymentMethod",
+  "paymentSourceApi": "https://devsecpksite.azurewebsites.net/api/paymentSource"
+
 
 
 }
