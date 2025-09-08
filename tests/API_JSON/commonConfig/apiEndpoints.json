@@ -13,5 +13,4 @@
   "vehicleModelForVehicleMake": "https://devsecpksite.azurewebsites.net/api/vehicleModelForVehicleMake",
   "isDuplicate": "https://devsecpksite.azurewebsites.net/api/violation/isDuplicate",
   "sourceTypesApi": "https://devsecpksite.azurewebsites.net/api/SourceTypes"
-
 }
