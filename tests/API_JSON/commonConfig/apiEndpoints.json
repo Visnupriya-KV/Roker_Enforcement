@@ -15,5 +15,4 @@
   "sourceTypesApi": "https://devsecpksite.azurewebsites.net/api/SourceTypes",
   "plateActivityListApi": "https://devsecpksite.azurewebsites.net/api/PlateActivityList",
   "plateActivityTypeMasterApi": "https://devsecpksite.azurewebsites.net/api/PlateActivityTypeMaster"
-
 }
