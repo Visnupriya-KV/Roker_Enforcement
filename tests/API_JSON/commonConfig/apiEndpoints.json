@@ -11,6 +11,6 @@
   "violationTypeForLotApi": "https://devsecpksite.azurewebsites.net/api/violationTypeForLot",
   "getLotsForUser": "https://devsecpksite.azurewebsites.net/api/getLotsForUser",
   "vehicleModelForVehicleMake": "https://devsecpksite.azurewebsites.net/api/vehicleModelForVehicleMake",
-  "isDuplicate": "https://devsecpksite.azurewebsites.net/api/violation/isDuplicate"
-
+  "isDuplicate": "https://devsecpksite.azurewebsites.net/api/violation/isDuplicate",
+  "sourceTypesApi": "https://devsecpksite.azurewebsites.net/api/SourceTypes"
 }
