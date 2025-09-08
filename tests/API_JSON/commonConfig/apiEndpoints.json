@@ -12,5 +12,6 @@
   "getLotsForUser": "https://devsecpksite.azurewebsites.net/api/getLotsForUser",
   "vehicleModelForVehicleMake": "https://devsecpksite.azurewebsites.net/api/vehicleModelForVehicleMake",
   "isDuplicate": "https://devsecpksite.azurewebsites.net/api/violation/isDuplicate",
-  "sourceTypesApi": "https://devsecpksite.azurewebsites.net/api/SourceTypes"
+  "sourceTypesApi": "https://devsecpksite.azurewebsites.net/api/SourceTypes",
+  "plateActivityListApi": "https://devsecpksite.azurewebsites.net/api/PlateActivityList"
 }
