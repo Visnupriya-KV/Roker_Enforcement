@@ -14,3 +14,4 @@ S.No,Control,TestCaseID,Module,Author,Description
 13,Y,API_IsDuplicate_Tests,API_Regression,Visnu,API_Check,
 14,Y,API_SourceTypes_Test,API_Regression,Visnu,API_Check,
 15,Y,API_PlateActivityList_Test,API_Regression,Visnu,API_Check,
+16,Y,API_PlateActivityTypeMaster_Test,API_Regression,Visnu,API_Check,
