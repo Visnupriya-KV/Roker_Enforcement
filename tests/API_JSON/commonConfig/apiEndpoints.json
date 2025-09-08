@@ -13,5 +13,6 @@
   "vehicleModelForVehicleMake": "https://devsecpksite.azurewebsites.net/api/vehicleModelForVehicleMake",
   "isDuplicate": "https://devsecpksite.azurewebsites.net/api/violation/isDuplicate",
   "sourceTypesApi": "https://devsecpksite.azurewebsites.net/api/SourceTypes",
-  "plateActivityListApi": "https://devsecpksite.azurewebsites.net/api/PlateActivityList"
+  "plateActivityListApi": "https://devsecpksite.azurewebsites.net/api/PlateActivityList",
+  "plateActivityTypeMasterApi": "https://devsecpksite.azurewebsites.net/api/PlateActivityTypeMaster"
 }
