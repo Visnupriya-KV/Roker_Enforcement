@@ -24,3 +24,4 @@ S.No,Control,TestCaseID,Module,Author,Description
 23,Y,API_PlateActivitySearch_Test,API_Regression,Visnu,API_Check,
 24,Y,API_PlateActivitySearchExport_Test,API_Regression,Visnu,API_Check,
 25,Y,API_ParkingDurationTempSearch_Test,API_Regression,Visnu,API_Check,
+26,Y,API_PaymentSearchExport_Test,API_Regression,Visnu,API_Check,
