@@ -21,7 +21,9 @@
   "violationSearchApi": "https://devsecpksite.azurewebsites.net/api/violation/search",
   "sessionSearchApi": "https://devsecpksite.azurewebsites.net/api/session/search",
   "sessionSearchExportApi": "https://devsecpksite.azurewebsites.net/api/session/search/export",
-  "plateActivitySearchApi": "https://devsecpksite.azurewebsites.net/api/plateactivity/search"
+  "plateActivitySearchApi": "https://devsecpksite.azurewebsites.net/api/plateactivity/search",
+  "plateActivitySearchExportApi": "https://devsecpksite.azurewebsites.net/api/plateactivity/search/export"
+
 
 
 
