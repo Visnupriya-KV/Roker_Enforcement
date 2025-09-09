@@ -18,7 +18,10 @@
   "paymentMethodApi": "https://devsecpksite.azurewebsites.net/api/paymentMethod",
   "paymentSourceApi": "https://devsecpksite.azurewebsites.net/api/paymentSource",
   "transactionTypeApi": "https://devsecpksite.azurewebsites.net/api/transactionType",
-  "violationSearchApi": "https://devsecpksite.azurewebsites.net/api/violation/search"
+  "violationSearchApi": "https://devsecpksite.azurewebsites.net/api/violation/search",
+  "sessionSearchApi": "https://devsecpksite.azurewebsites.net/api/session/search"
+
+
 
 
 
