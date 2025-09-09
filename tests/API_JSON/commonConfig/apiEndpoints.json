@@ -17,7 +17,8 @@
   "plateActivityTypeMasterApi": "https://devsecpksite.azurewebsites.net/api/PlateActivityTypeMaster",
   "paymentMethodApi": "https://devsecpksite.azurewebsites.net/api/paymentMethod",
   "paymentSourceApi": "https://devsecpksite.azurewebsites.net/api/paymentSource",
-  "transactionTypeApi": "https://devsecpksite.azurewebsites.net/api/transactionType"
+  "transactionTypeApi": "https://devsecpksite.azurewebsites.net/api/transactionType",
+  "violationSearchApi": "https://devsecpksite.azurewebsites.net/api/violation/search"
 
 
 
