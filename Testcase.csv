@@ -18,3 +18,4 @@ S.No,Control,TestCaseID,Module,Author,Description
 17,Y,API_PaymentMethod_Test,API_Regression,Visnu,API_Check,
 18,Y,API_PaymentSource_Test,API_Regression,Visnu,API_Check,
 19,Y,API_TransactionType_Test,API_Regression,Visnu,API_Check,
+20,Y,API_Search_Test,API_Regression,Visnu,API_Check,
