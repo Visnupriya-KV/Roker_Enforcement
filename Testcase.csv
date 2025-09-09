@@ -20,3 +20,4 @@ S.No,Control,TestCaseID,Module,Author,Description
 19,Y,API_TransactionType_Test,API_Regression,Visnu,API_Check,
 20,Y,API_Search_Test,API_Regression,Visnu,API_Check,
 21,Y,API_SessionSearch_Test,API_Regression,Visnu,API_Check,
+22,Y,API_SessionSearchExport_Test,API_Regression,Visnu,API_Check,
