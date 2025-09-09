@@ -25,3 +25,8 @@ S.No,Control,TestCaseID,Module,Author,Description
 24,Y,API_PlateActivitySearchExport_Test,API_Regression,Visnu,API_Check,
 25,Y,API_ParkingDurationTempSearch_Test,API_Regression,Visnu,API_Check,
 26,Y,API_PaymentSearchExport_Test,API_Regression,Visnu,API_Check,
+27,Y,API_PaymentSearch_Test,API_Regression,Visnu,API_Check,
+28,Y,API_ReportGetRokerPermitActiveScans_Test,API_Regression,Visnu,API_Check,
+29,Y,API_CollectionsSearch_Test,API_Regression,Visnu,API_Check,
+30,Y,API_GetRokerPermitActiveScansExport_Test,API_Regression,Visnu,API_Check,
+31,Y,API_ViolationSearchExport_Test,API_Regression,Visnu,API_Check,
