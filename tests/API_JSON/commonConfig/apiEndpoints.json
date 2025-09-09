@@ -24,7 +24,17 @@
   "plateActivitySearchApi": "https://devsecpksite.azurewebsites.net/api/plateactivity/search",
   "plateActivitySearchExportApi": "https://devsecpksite.azurewebsites.net/api/plateactivity/search/export",
   "parkingDurationTempSearchApi": "https://devsecpksite.azurewebsites.net/api/parkingdurationTemp/search",
-  "paymentSearchExportApi": "https://devsecpksite.azurewebsites.net/api/payment/search/export"
+  "paymentSearchExportApi": "https://devsecpksite.azurewebsites.net/api/payment/search/export",
+  "paymentSearchApi": "https://devsecpksite.azurewebsites.net/api/payment/search",
+  "collectionsSearchApi": "https://devsecpksite.azurewebsites.net/api/collections/search",
+  "getRokerPermitActiveScansApi": "https://devsecpksite.azurewebsites.net/api/report/getRokerPermitActiveScans",
+  "getRokerPermitActiveScansExportApi": "https://devsecpksite.azurewebsites.net/api/report/getRokerPermitActiveScans/export",
+  "violationSearchExportApi": "https://devsecpksite.azurewebsites.net/api/violation/search/export"
+
+
+
+
+
 
 
 
