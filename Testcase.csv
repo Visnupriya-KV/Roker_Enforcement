@@ -22,3 +22,4 @@ S.No,Control,TestCaseID,Module,Author,Description
 21,Y,API_SessionSearch_Test,API_Regression,Visnu,API_Check,
 22,Y,API_SessionSearchExport_Test,API_Regression,Visnu,API_Check,
 23,Y,API_PlateActivitySearch_Test,API_Regression,Visnu,API_Check,
+24,Y,API_PlateActivitySearchExport_Test,API_Regression,Visnu,API_Check,

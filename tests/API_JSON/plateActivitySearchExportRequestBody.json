@@ -1,0 +1,12 @@
+{
+  "plateNumber": "roker",
+  "startDate": "2025-08-04 00:00",
+  "endDate": "2025-08-04 23:59",
+  "lotIdsNew": [1441, 1805, 1273],
+  "groupIdsNew": [1710, 1410, 1714],
+  "userIdsNew": [],
+  "activityIDsNew": [],
+  "advanceFiltercriteria": 2,
+  "advanceFilterCondition": 0,
+  "advanceFilterdata": "rok"
+}
