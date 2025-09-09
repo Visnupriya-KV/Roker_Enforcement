@@ -1,0 +1,16 @@
+{
+  "plateNumber": "ROKER",
+  "HangTagCode": "",
+  "StallNumber": "",
+  "LotIDList": [1441, 1805, 1273],
+  "GroupIDList": [1710, 1410, 1714],
+  "VendorID": 1,
+  "SourceTypeIDs": "-1",
+  "StatusIDs": "-1",
+  "ReportConditionID": 0,
+  "startDate": "2025-08-01 00:00",
+  "endDate": "2025-08-01 23:59",
+  "advanceFiltercriteria": 1,
+  "advanceFilterCondition": -1,
+  "advanceFilterdata": ""
+}

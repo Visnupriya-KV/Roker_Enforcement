@@ -19,7 +19,11 @@
   "paymentSourceApi": "https://devsecpksite.azurewebsites.net/api/paymentSource",
   "transactionTypeApi": "https://devsecpksite.azurewebsites.net/api/transactionType",
   "violationSearchApi": "https://devsecpksite.azurewebsites.net/api/violation/search",
-  "sessionSearchApi": "https://devsecpksite.azurewebsites.net/api/session/search"
+  "sessionSearchApi": "https://devsecpksite.azurewebsites.net/api/session/search",
+  "sessionSearchExportApi": "https://devsecpksite.azurewebsites.net/api/session/search/export",
+  "plateActivitySearchApi": "https://devsecpksite.azurewebsites.net/api/plateactivity/search"
+
+
 
 
 
