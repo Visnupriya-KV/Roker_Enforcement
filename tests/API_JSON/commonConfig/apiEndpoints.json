@@ -22,7 +22,9 @@
   "sessionSearchApi": "https://devsecpksite.azurewebsites.net/api/session/search",
   "sessionSearchExportApi": "https://devsecpksite.azurewebsites.net/api/session/search/export",
   "plateActivitySearchApi": "https://devsecpksite.azurewebsites.net/api/plateactivity/search",
-  "plateActivitySearchExportApi": "https://devsecpksite.azurewebsites.net/api/plateactivity/search/export"
+  "plateActivitySearchExportApi": "https://devsecpksite.azurewebsites.net/api/plateactivity/search/export",
+  "parkingDurationTempSearchApi": "https://devsecpksite.azurewebsites.net/api/parkingdurationTemp/search"
+
 
 
 
