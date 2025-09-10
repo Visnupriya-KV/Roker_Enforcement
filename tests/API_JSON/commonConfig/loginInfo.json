@@ -1,5 +1,5 @@
 {
-  "loginUrl": "https://devsecpksite.azurewebsites.net/Account/Login.aspx",
+  "loginUrl": "https://uat.enforcement.rokerplus.com/Account/Login.aspx",
   "email": "dwightschrute@securepark.io",
   "password": "Securepark321!"
 }

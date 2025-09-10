@@ -1,14 +1,9 @@
 {
     "testCases": [
       {
-        "violationnumber": "RG000502",
+        "violationnumber": "134100",
         "violationId": 0,
         "isChecked": false
-      },
-      {
-        "violationnumber": "RG000503",
-        "violationId": 0,
-        "isChecked": true
       }
     ]
   }
