@@ -1,0 +1,10 @@
+{
+  "validUser": {
+    "email": "dwightschrute@securepark.io",
+    "password": "Securepark321!"
+  },
+  "invalidUser": {
+    "email": "invalid@securepark.io",
+    "password": "WrongPass123!"
+  }
+}
