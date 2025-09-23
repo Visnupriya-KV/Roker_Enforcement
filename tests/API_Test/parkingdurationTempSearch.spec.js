@@ -1,8 +1,8 @@
 import { test, expect, request } from '@playwright/test';
-import loginInfo from '../API_JSON/commonConfig/loginInfo.json';
-import headers from '../API_JSON/commonConfig/headers.json';
-import apiEndpoints from '../API_JSON/commonConfig/apiEndpoints.json';
-import parkingDurationTempSearchRequestBody from '../API_JSON/parkingDurationTempSearchRequestBody.json';
+import loginInfo from '../../data/API_JSON/commonConfig/loginInfo.json';
+import headers from '../../data/API_JSON/commonConfig/headers.json';
+import apiEndpoints from '../../data/API_JSON/commonConfig/apiEndpoints.json';
+import parkingDurationTempSearchRequestBody from '../../data/API_JSON/parkingDurationTempSearchRequestBody.json';
 
 test('API_ParkingDurationTempSearch_Test: Capture cookies and call Parking Duration Temp Search API', async ({ page }) => {
   let cookies = '';

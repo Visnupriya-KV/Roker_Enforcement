@@ -1,10 +1,10 @@
 import { test, expect, request } from '@playwright/test';
 import fs from 'fs'; // Import fs for file operations
 import path from 'path'; // Import path for file path handling
-import loginInfo from '../API_JSON/commonConfig/loginInfo.json';
-import headers from '../API_JSON/commonConfig/headers.json';
-import apiEndpoints from '../API_JSON/commonConfig/apiEndpoints.json';
-import plateActivitySearchExportRequestBody from '../API_JSON/plateActivitySearchExportRequestBody.json';
+import loginInfo from '../../data/API_JSON/commonConfig/loginInfo.json';
+import headers from '../../data/API_JSON/commonConfig/headers.json';
+import apiEndpoints from '../../data/API_JSON/commonConfig/apiEndpoints.json';
+import plateActivitySearchExportRequestBody from '../../data/API_JSON/plateActivitySearchExportRequestBody.json';
 
 test('API_PlateActivitySearchExport_Test: Capture cookies, call Plate Activity Search Export API, and save file', async ({ page }) => {
   let cookies = '';

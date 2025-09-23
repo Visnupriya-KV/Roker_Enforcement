@@ -1,8 +1,8 @@
 import { test, expect, request } from '@playwright/test';
-import loginInfo from '../API_JSON/commonConfig/loginInfo.json';
-import headers from '../API_JSON/commonConfig/headers.json';
-import apiEndpoints from '../API_JSON/commonConfig/apiEndpoints.json';
-import isDuplicateData from '../API_JSON/isDuplicate.json';
+import loginInfo from '../../data/API_JSON/commonConfig/loginInfo.json';
+import headers from '../../data/API_JSON/commonConfig/headers.json';
+import apiEndpoints from '../../data/API_JSON/commonConfig/apiEndpoints.json';
+import isDuplicateData from '../../data/API_JSON/isDuplicate.json';
 
 test.describe('API_IsDuplicate_Tests', () => {
   let cookies = '';
