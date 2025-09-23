@@ -1,8 +1,8 @@
 import { test, expect, request } from '@playwright/test';
-import loginInfo from '../API_JSON/commonConfig/loginInfo.json';
-import headers from '../API_JSON/commonConfig/headers.json';
-import apiEndpoints from '../API_JSON/commonConfig/apiEndpoints.json';
-import plateActivitySearchRequestBody from '../API_JSON/plateActivitySearchRequestBody.json';
+import loginInfo from '../../data/API_JSON/commonConfig/loginInfo.json';
+import headers from '../../data/API_JSON/commonConfig/headers.json';
+import apiEndpoints from '../../data/API_JSON/commonConfig/apiEndpoints.json';
+import plateActivitySearchRequestBody from '../../data/API_JSON/plateActivitySearchRequestBody.json';
 
 test('API_PlateActivitySearch_Test: Capture cookies and call Plate Activity Search API', async ({ page }) => {
   let cookies = '';

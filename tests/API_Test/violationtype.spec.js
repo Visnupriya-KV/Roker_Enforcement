@@ -1,7 +1,7 @@
 import { test, expect, request } from '@playwright/test';
-import loginInfo from '../API_JSON/commonConfig/loginInfo.json';
-import headers from '../API_JSON/commonConfig/headers.json';
-import apiEndpoints from '../API_JSON/commonConfig/apiEndpoints.json';
+import loginInfo from '../../data/API_JSON/commonConfig/loginInfo.json';
+import headers from '../../data/API_JSON/commonConfig/headers.json';
+import apiEndpoints from '../../data/API_JSON/commonConfig/apiEndpoints.json';
 
 test('API_ViolationType_Test: Capture cookies and call violationtype API', async ({ page }) => {
   let cookies = '';
