@@ -2,10 +2,10 @@ import { test, expect, request } from '@playwright/test';
 import { parseStringPromise } from 'xml2js'; // Import xml2js for XML parsing
 import fs from 'fs'; // Import fs for file operations
 import path from 'path'; // Import path for file path handling
-import loginInfo from '../API_JSON/commonConfig/loginInfo.json';
-import headers from '../API_JSON/commonConfig/headers.json';
-import apiEndpoints from '../API_JSON/commonConfig/apiEndpoints.json';
-import sessionSearchExportRequestBody from '../API_JSON/sessionSearchExportRequestBody.json';
+import loginInfo from '../../data/API_JSON/commonConfig/loginInfo.json';
+import headers from '../../data/API_JSON/commonConfig/headers.json';
+import apiEndpoints from '../../data/API_JSON/commonConfig/apiEndpoints.json';
+import sessionSearchExportRequestBody from '../../data/API_JSON/sessionSearchExportRequestBody.json';
 
 test('API_SessionSearchExport_Test: Capture cookies, call Session Search Export API, and save XML', async ({ page }) => {
   let cookies = '';

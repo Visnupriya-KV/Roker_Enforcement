@@ -1,8 +1,8 @@
 import { test, expect, request } from '@playwright/test';
-import loginInfo from '../API_JSON/commonConfig/loginInfo.json';
-import headers from '../API_JSON/commonConfig/headers.json';
-import apiEndpoints from '../API_JSON/commonConfig/apiEndpoints.json';
-import requestParams from '../API_JSON/requestParams.json';
+import loginInfo from '../../data/API_JSON/commonConfig/loginInfo.json';
+import headers from '../../data/API_JSON/commonConfig/headers.json';
+import apiEndpoints from '../../data/API_JSON/commonConfig/apiEndpoints.json';
+import requestParams from '../../data/API_JSON/requestParams.json';
 
 test('API_ViolationTypeForLot_Test: Capture cookies and call violationTypeForLot API', async ({ page }) => {
   let cookies = '';
