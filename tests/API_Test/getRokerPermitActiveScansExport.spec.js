@@ -1,9 +1,9 @@
 import { test, expect, request } from '@playwright/test';
 import fs from 'fs'; // Import fs for file operations
 import path from 'path'; // Import path for file path handling
-import loginInfo from '../../data/API_JSON/commonConfig/loginInfo.json';
-import headers from '../../data/API_JSON/commonConfig/headers.json';
-import apiEndpoints from '../../data/API_JSON/commonConfig/apiEndpoints.json';
+import loginInfo from '../../utils/commonConfig/loginInfo.json';
+import headers from '../../utils/commonConfig/headers.json';
+import apiEndpoints from '../../utils/commonConfig/apiEndpoints.json';
 import getRokerPermitActiveScansExportRequestBody from '../../data/API_JSON/getRokerPermitActiveScansExportRequestBody.json';
 
 test('API_GetRokerPermitActiveScansExport_Test: Capture cookies, call Get Roker Permit Active Scans Export API, and save XML file', async ({ page }) => {
