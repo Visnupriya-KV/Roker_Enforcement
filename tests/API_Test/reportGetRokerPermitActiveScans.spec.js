@@ -1,7 +1,7 @@
 import { test, expect, request } from '@playwright/test';
-import loginInfo from '../../data/API_JSON/commonConfig/loginInfo.json';
-import headers from '../../data/API_JSON/commonConfig/headers.json';
-import apiEndpoints from '../../data/API_JSON/commonConfig/apiEndpoints.json';
+import loginInfo from '../../utils/commonConfig/loginInfo.json';
+import headers from '../../utils/commonConfig/headers.json';
+import apiEndpoints from '../../utils/commonConfig/apiEndpoints.json';
 import reportGetRokerPermitActiveScansRequestBody from '../../data/API_JSON/reportGetRokerPermitActiveScansRequestBody.json';
 
 test('API_ReportGetRokerPermitActiveScans_Test: Capture cookies and call Get Roker Permit Active Scans API', async ({ page }) => {

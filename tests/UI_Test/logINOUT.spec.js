@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import urls from '../../data/UI_JSON/UI_URLs/urls.json';
+import urls from '../../utils/UI_URLs/urls.json';
 import testData from '../../data/UI_JSON/UI_TestData/logIn.json';
 import fs from 'fs';
 import Papa from 'papaparse'; // npm install papaparse
